@@ -15,24 +15,52 @@
         <form action="" id="form">
             <label for="size">Choose the Size</label>
             <input type="number" id="size" min="3" max="5" value="3">
-            <p>Choose the Players</p>
-            <input type="radio" id="one-player" name="players" value="one-player" class="players">
-            <label for="one-player">One player</label><br>
-            <input type="radio" id="two-players" name="players" value="two-players" class="players">
-            <label for="two-players">Two players</label><br>
-            <p>Choose your hand</p>
-            <input type="radio" id="hand-x" name="hand" value="hand-x">
-            <label for="hand-x">X</label><br>
-            <input type="radio" id="hand-o" name="hand" value="hand-o">
-            <label for="hand-o">O</label><br>
+            <div id="player-option">
+                <p>Choose the Players</p>
+                <input type="radio" id="one-player" name="players" value="one-player" class="players"
+                    onclick="getPlayerOption()" required>
+                <label for="one-player">One player</label><br>
+                <input type="radio" id="two-players" name="players" value="two-players" class="players"
+                    onclick="getPlayerOption()" required>
+                <label for="two-players">Two players</label>
+            </div>
+            <div id="hand">
+                <p>Choose your hand</p>
+                <input type="radio" id="hand-x" name="hand" value="hand-x">
+                <label for="hand-x">X</label><br>
+                <input type="radio" id="hand-o" name="hand" value="hand-o">
+                <label for="hand-o">O</label><br>
+            </div>
+            <div id="players-info">
+                <!-- <div id="first"> -->
+                <label for="firstPlayerName"> I will play with <span>X</span></label>
+                <input type="text" id="firstPlayerName" placeholder="Write players Name">
+                <!-- </div>
+                <div id="second"> -->
+                <label for="secondPlayerName">I will play with <span>O</span></label>
+                <input type="text" id="secondPlayerName" placeholder="Write players Name">
+                <!-- </div> -->
+            </div>
             <input type="submit" value="Submit">
 
         </form>
     </section>
     <section class="game">
-
+        <!-- <button type="submit" value="Clear Board"> -->
+        <button type="button" onclick="clearBoard()">Clear Board</button>
     </section>
     <section class="score">
+        <form action="" class="score-form">
+            <div id="first">
+                <label for="firstPlayer"></label>
+                <input type="number" id="firstPlayer" value="0" readonly>
+            </div>
+            <div id="second">
+                <label for="secondPlayer"></label>
+                <input type="number" id="secondPlayer" value="0" readonly>
+            </div>
+
+        </form>
 
     </section>
     <script src="script.js"></script>
